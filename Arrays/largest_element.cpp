@@ -23,10 +23,16 @@ int32_t main()
         for(auto it:A)
         cin>>it;
 
+        //o(n) solution
         int mx=INT_MIN;
         for(auto &it:A)
         mx=max(mx,it);
-    
+        //using STL 
+        mx = *max_element(A.begin(),A.end());
+        //using o(nlogn) sorting in desc 
+        sort(A.rbegin(),A.rend());
+        mx=A[0];
+
         cout<<mx<<endl;
     
     
